@@ -1,0 +1,353 @@
+Programming Language Used -> Java
+
+Implementation Details :-
+1) Local branches have their server running on local machines.
+2) Controller distributes initial amount of money depending on the number of branches.
+3) After each and every branch has received initial amount of money, transactions are initiated.
+4) A branch sends a random amount of money to random branch and maintains its own local balance.
+5) After specific period of time, controller initiates the global snapshot algorithm by selecting a random branch.
+6) Each branch records its local balance and incoming amount in transit from other branches.
+6) Thereafter, controller retrieves the global snapshot data from every branch and displays it accordingly.
+
+
+How to run :-
+1) The file 'branches' contains details of branch name, ip and port number on which it is running.
+2) Navigate to the project directory.
+3) Run the make file.
+4) Run ./branch.sh <branch_name> <port_number> as specified in 'branches' file. Run it for all branches.
+5) The server of respective branches are up. So run the controller using ./controller.sh <amount_to_distribute> branches.
+6) Make sure that the amount specified in controller is evenly distributed amongst all branches.
+7) The controller will display the details of snapshot.
+
+
+Sample Output
+
+1) Branch :-
+
+chetan@chetan-Lenovo-Yoga-3-14:~/eclipse_workspace/Distributed_Banking_Application$ ./branch.sh branch1 9091
+Branch started on port 9091
+
+
+
+2) Controller
+
+chetan@chetan-Lenovo-Yoga-3-14:~/eclipse_workspace/Distributed_Banking_Application$ ./controller.sh 4000 branches
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+
+Snapshot initiated at branch1
+
+***** Details of Snapshot 1 *****
+branch1 local balance -> 980
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1100
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 950
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 970
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch4
+
+***** Details of Snapshot 2 *****
+branch1 local balance -> 870
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1160
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 990
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 980
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch1
+
+***** Details of Snapshot 3 *****
+branch1 local balance -> 860
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1060
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1070
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1010
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch1
+
+***** Details of Snapshot 4 *****
+branch1 local balance -> 820
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1200
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1170
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 810
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch3
+
+***** Details of Snapshot 5 *****
+branch1 local balance -> 900
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1110
+Amount in Transit-> 40
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1210
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 740
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch2
+
+***** Details of Snapshot 6 *****
+branch1 local balance -> 770
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1160
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1220
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 850
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+^[
+
+
+Snapshot initiated at branch3
+
+***** Details of Snapshot 7 *****
+branch1 local balance -> 710
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1220
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1030
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1040
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch1
+
+***** Details of Snapshot 8 *****
+branch1 local balance -> 830
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1220
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 1000
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 950
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch4
+
+***** Details of Snapshot 9 *****
+branch1 local balance -> 760
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1130
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 990
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1120
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch1
+
+***** Details of Snapshot 10 *****
+branch1 local balance -> 1040
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1010
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 790
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1160
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch3
+
+***** Details of Snapshot 11 *****
+branch1 local balance -> 1040
+Amount in Transit-> 20
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1080
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 690
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1170
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch3
+
+***** Details of Snapshot 12 *****
+branch1 local balance -> 1050
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1090
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 680
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1180
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch4
+
+***** Details of Snapshot 13 *****
+branch1 local balance -> 1010
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 1100
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 530
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1360
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch2
+
+***** Details of Snapshot 14 *****
+branch1 local balance -> 1020
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 940
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 500
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1540
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+
+
+Snapshot initiated at branch3
+
+***** Details of Snapshot 15 *****
+branch1 local balance -> 1040
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch2 local balance -> 750
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch3 local balance -> 820
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
+branch4 local balance -> 1390
+Amount in Transit-> 0
+Amount in Transit-> 0
+Amount in Transit-> 0
